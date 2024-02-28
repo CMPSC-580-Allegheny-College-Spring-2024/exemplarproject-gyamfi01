@@ -17,7 +17,7 @@ This repository contains student project materials, including project report, da
 
 ## Overview
 
-TODO (250 words minimum): Discuss the overview of the project using and building on the project description provided by the department. In this section, a concise summary is discussed of the study's key elements, offering the reader a quick understanding of the research's scope and goals. The section continues to outline the main topics, research questions, hypotheses, and /or theories in a clear and meaningful language to provide a type of roadmap for the reader to navigate the forthcoming details of the project. This section also needs to motivate the project by providing context for the study, outlining the current state of knowledge in the field, and highlighting any gaps or limitations in existing research. The section serves as a foundational guide that enables the reader to grasp the context of the study, in addition to its structure, before moving into a more technically-based discussion in the following sections of the article. In short, the "Overview" section needs to answer the `what` and `why` questions, that is `what is the project?` and `why is the project important?`
+The goal of the "Corpus Fact-Checking Dashboard" project is to create a simple tool for finding and verifying information in an XML file corpus. As evidenced by the increasing amount of research content available in digital formats, the project is in line with the department's goals by addressing the growing need for effective information retrieval and verification tools in the field of academic literature. The project entails developing a simple dashboard that allows users to enter textual information for fact-checking. The dashboard uses machine learning, natural language toolkits, and computational automation to verify concepts found in scientific literature by utilizing a corpus of scientific papers from PubMed. The output gives users precise details about where confirmed facts are located in the corpus. In order to create an interactive user interface, the project includes essential components including XML parsing, text preprocessing, and integration with the Streamlit framework. The amount of digital content in academic settings has grown, which calls for effective information retrieval and fact-checking. Current technologies might not be designed with academic corpus in mind, or they might not have user-friendly interfaces. By filling in these gaps, my project offers the academic community a focused solution.To conclude, the "Corpus Fact-Checking Dashboard" project provides academics with a specific tool to verify material found in an established corpus, therefore addressing a gap in the existing environment. The project's importance derives from its ability to improve the effectiveness of fact-checking and scholarly research procedures.
 
 ## Literature Review
 
@@ -29,7 +29,62 @@ TODO: Discuss the methods of the project to be able to answer the `how` question
 
 ## Using the Artifact
 
-TODO: The result of your work will be the delivery of some type of artifact which will likely contain software programming solutions (i.e., Python code, HTML pages, or similar). To allow the user to experience and execute your artifact, you must first explain how to set up the initial conditions to run or use the artifact. Be sure to offer explicit details and instructions regarding the installation of the necessary foundational libraries, drivers, external software projects, containers and similar types of tertiary software which are involved in executing your artifact. Once these initial software installations have been completed, then you are asked to offer the necessary instructions for actually executing the artifact. For this, please provide all command line parameters or associated bash commands for execution. Please remember that users are unwilling to "figure-out" how to use code in absence of the essential instructions concerning the execution of project artifacts.
+**Setting Up the Initial Conditions:**
+
+1. **Clone the Repository:**
+   ```bash
+   git clone git@github.com:CMPSC-580-Allegheny-College-Spring-2024/exemplarproject-gyamfi01.git
+   cd src
+   ```
+
+2. **Create a Virtual Environment:**
+   ```bash
+   python -m venv venv
+   ```
+
+3. **Activate the Virtual Environment:**
+   - **For Windows:**
+     ```bash
+     .\venv\Scripts\activate
+     ```
+   - **For Unix/Linux:**
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Download and Extract PubMed Corpus:**
+   - Download the corpus file, e.g., [oa_noncomm_xml.PMC001xxxxxx.baseline.2023-12-18.tar.gz](https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_bulk/oa_noncomm/xml/oa_noncomm_xml.PMC001xxxxxx.baseline.2023-12-18.tar.gz)
+   - Extract the file using:
+     ```bash
+     tar -xvf oa_noncomm_xml.PMC001xxxxxx.baseline.2023-12-18.tar.gz
+     ```
+
+6. **Set Up Local Database:**
+   - Create a local database for efficient data retrieval during fact-checking.
+   - Update database configuration in the project settings.
+
+**Executing the Corpus Fact-Checking Dashboard:**
+
+1. **Run the Dashboard:**
+   ```bash
+   streamlit fact_checker.py
+   ```
+
+2. **Access the Dashboard:**
+   - Open a web browser and go to [http://localhost:8501](http://localhost:8501).
+
+3. **Input Queries:**
+   - Enter textual details for fact-checking in the provided field.
+
+4. **Check Results:**
+   - The dashboard will display messages confirming or denying the existence of the inputted facts in the corpus.
+
+By following these steps, users can set up and execute the "Corpus Fact-Checking Dashboard" artifact. Ensure that all initial conditions, including virtual environment activation and database setup, are completed for a smooth execution experience.
 
 ## Results and Outcomes
 

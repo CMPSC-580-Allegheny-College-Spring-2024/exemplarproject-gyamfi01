@@ -1,22 +1,19 @@
-# Import necessary libraries
-import streamlit as st
+"""Corpus Fact-Checking Dashboard: Search for phrases in a directory of XML files and display results in a Streamlit UI."""
+
 import os
-import xml.etree.ElementTree as ET
 import re
+import xml.etree.ElementTree as ET
+import streamlit as st
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+import nltk
 
 # Ensure NLTK datasets are available
-import nltk
 nltk.download('punkt')
 nltk.download('stopwords')
 
 # Hardcoded path to your corpus directory
 CORPUS_DIRECTORY = '/Users/jasongyamfi/Desktop/Comp_Sci_203/exemplarproject-gyamfi01/data/corpus/PMC001xxxxxx'
-
-# New preprocessing function
-import re
-from nltk.tokenize import word_tokenize
 
 def preprocess_text(text, remove_stopwords=True):
     """Preprocess text for searching."""
@@ -28,15 +25,14 @@ def preprocess_text(text, remove_stopwords=True):
     words = [word for word in words if word]  # Filter out empty strings
     return ' '.join(words)
 
-
 def search_for_phrase(phrase, text):
     """Check if a phrase is in the text."""
     processed_phrase = preprocess_text(phrase, remove_stopwords=False)
     processed_text = preprocess_text(text, remove_stopwords=False)
     return processed_phrase in processed_text
 
-# Adjusted parse_xml_and_search function
 def parse_xml_and_search(query, directory=CORPUS_DIRECTORY):
+    """Search for a query in XML files within a directory."""
     results = []
     for filename in os.listdir(directory):
         if filename.endswith('.xml'):
