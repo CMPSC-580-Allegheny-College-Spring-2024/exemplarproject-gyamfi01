@@ -45,7 +45,57 @@ To summarize, the body of research highlights the value of natural language proc
 
 ## Methods
 
-TODO: Discuss the methods of the project to be able to answer the `how` question (`how was this project completed?`). The methods section in an academic research outlines the specific procedures, techniques, and methodologies employed to conduct the study, offering a transparent and replicable framework for the research. It details the resources behind the work, in terms of, for example, the design of the algorithm and the experiment(s), data collection methods, applied software libraries, required tools, the types of statistical analyses and models which are applied to ensure the rigor and validity of the study. This section provides clarity for other researchers to understand and potentially replicate the study, contributing to the overall reliability and credibility of the research findings.
+### 1. Data Preprocessing
+
+The project began with data preprocessing to prepare the textual content extracted from XML files for efficient searching.
+
+- **Tokenization and Lowercasing:** The NLTK library was used to tokenize the text into words, and all words were converted to lowercase to ensure uniformity.
+
+- **Stopword Removal:** Common English stopwords were removed to focus on meaningful content and enhance search accuracy.
+
+### 2. Searching for Phrases in XML Files
+
+The primary task was to search for user-specified phrases within a directory of XML files.
+
+- **XML Parsing:** The `xml.etree.ElementTree` module facilitated parsing XML files to extract relevant text content.
+
+- **Phrase Matching:** A function was developed to check for the existence of a given phrase in the preprocessed text using exact matching.
+
+### 3. Streamlit User Interface
+
+To make the project accessible and user-friendly, a Streamlit dashboard was implemented.
+
+- **Dashboard Components:** The Streamlit framework was employed to create an interactive dashboard. Key components included:
+  - Title display using `st.title`.
+  - User input field for queries with `st.text_input`.
+  - Button for triggering the fact-checking process with `st.button`.
+  - Results display using `st.write`.
+
+### 4. Special Setup Procedures
+
+Specific setup procedures were required to ensure proper execution of the project.
+
+- **NLTK Data Download:** The NLTK datasets ('punkt' and 'stopwords') were downloaded using `nltk.download` to support tokenization and stopwords removal.
+
+- **XML Parsing:** Verification of the presence of necessary XML files in the specified corpus directory (`CORPUS_DIRECTORY`) was crucial for successful execution.
+
+### 5. Source Code Organization
+
+The source code was structured into functions to enhance modularity and readability. Each function had a specific role in the fact-checking process, contributing to code maintainability.
+
+### 6. Running the Artifact
+
+To execute the project, follow these steps:
+
+1. Ensure NLTK datasets are available by running `nltk.download('punkt')` and `nltk.download('stopwords')`.
+
+2. Verify the presence of XML files in the specified corpus directory (`CORPUS_DIRECTORY`).
+
+3. Run the script containing the provided code.
+
+The user will interact with the Streamlit dashboard, entering queries for fact-checking and receiving results dynamically.
+
+By following this comprehensive methodology, the project achieved a reliable and replicable framework for fact-checking within a corpus of XML files, with a user-friendly interface provided by the Streamlit dashboard.
 
 ## Using the Artifact
 
