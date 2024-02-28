@@ -88,7 +88,18 @@ By following these steps, users can set up and execute the "Corpus Fact-Checking
 
 ## Results and Outcomes
 
-TODO: Discuss the outcomes of your project in this section. Depending on the project type, the presented results and outcomes will vary. In some projects, you will be asked to present a theoretical analysis, and in others your experimental study and its results. In this section, you are also to demonstrate an enhanced version of your artifact by showing its capabilities and applications, in light of the evaluation metrics for assessing the artifact
+If executed successfully, the output of the "Corpus Fact-Checking Dashboard" will provide results in the following format:
+
+```
+Phrase 'FISH' found in PMC1802627.xml
+Phrase 'FISH' found in PMC1807950.xml
+Phrase 'FISH' found in PMC1876603.xml
+Phrase 'FISH' found in PMC1942175.xml
+Phrase 'FISH' found in PMC1920257.xml
+Phrase 'FISH' found in PMC1998876.xml
+```
+
+This output briefly displays the times the query phrase "FISH" appears in various XML files in the corpus. Users receive a concise and comprehensive summary of the fact-checking findings with each line corresponding to a separate file containing the term in question. It is easy for the user to comprehend and browse through the results, which makes it easier to comprehend where in the corpus the information that was searched is supported.
 
 ---
 
